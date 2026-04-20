@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-navy:   #1E2344;
+  --brand-orange: #EE7023;
+  --brand-coral:  #E83F58;
+  --brand-purple: #8A2685;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--brand-navy);
+  color: #1E2344;
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(90deg, #EE7023 0%, #E83F58 50%, #8A2685 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient border top utility */
+.gradient-border-top {
+  position: relative;
+}
+.gradient-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #EE7023 0%, #E83F58 50%, #8A2685 100%);
+  border-radius: 4px 4px 0 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #1E2344; }
+::-webkit-scrollbar-thumb { background: #3a4070; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #EE7023; }
+
+/* Section card */
+.section-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* KPI card hover */
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Table striping */
+.data-table tr:nth-child(even) td {
+  background-color: #f9fafb;
+}
+
+/* Animate fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.3s ease-out; }
